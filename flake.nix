@@ -24,8 +24,11 @@
                 ps: with ps; [
                   scrapy
                   pillow
+                  python-lsp-server
                 ]
               ))
+              uv
+              ruff
             ];
           };
       }

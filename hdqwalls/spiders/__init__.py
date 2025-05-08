@@ -4,8 +4,9 @@
 # your spiders.
 
 import scrapy
-from ..items import HdqwallsItem
 from scrapy.http import TextResponse
+
+from ..items import HdqwallsItem
 
 
 class Hdqwalls(scrapy.Spider):

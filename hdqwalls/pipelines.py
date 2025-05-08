@@ -7,7 +7,6 @@ import hashlib
 from typing import Optional
 
 # useful for handling different item types with a single interface
-from itemadapter import ItemAdapter
 from scrapy.pipelines.images import ImagesPipeline
 from scrapy.pipelines.media import MediaPipeline
 from scrapy.http import Request, Response
