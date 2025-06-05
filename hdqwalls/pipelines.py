@@ -9,7 +9,8 @@ from typing import Optional
 # useful for handling different item types with a single interface
 from scrapy.pipelines.images import ImagesPipeline
 from scrapy.pipelines.media import MediaPipeline
-from scrapy.http import Request, Response
+from scrapy.http.request import Request
+from scrapy.http.response import Response
 
 from .items import HdqwallsItem
 
@@ -21,7 +22,7 @@ class HdqwallsPipeline(ImagesPipeline):
         response: Optional[Response] = None,
         info: Optional[MediaPipeline.SpiderInfo] = None,
         *,
-        item: Optional[HdqwallsItem] = None
+        item: Optional[HdqwallsItem] = None,
     ) -> str:
         hash = hashlib.sha1(request.url.encode()).hexdigest()
         name = ".".join(request.url.split("/")[-1].split(".")[:-1])
