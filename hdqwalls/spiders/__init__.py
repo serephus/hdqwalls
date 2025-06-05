@@ -3,7 +3,7 @@
 # Please refer to the documentation for information on how to create and manage
 # your spiders.
 
-from typing import Generator, Optional
+from typing import Any, Generator, Optional
 
 from scrapy.http.request import Request
 from scrapy.http.response import Response
@@ -17,7 +17,9 @@ class Hdqwalls(Spider):
     allowed_domains = ["hdqwalls.com"]
     start_urls = ["https://hdqwalls.com/latest-wallpapers/page/1"]
 
-    def parse(self, response: Response) -> Generator[Request | HdqwallsItem]:
+    def parse(
+        self, response: Response
+    ) -> Generator[Request | HdqwallsItem, Any, None]:
         # let scrapy deduplicate page urls for us
         # pages: Iterable[str] = response.css("ul.pagination li a::attr(href)")
         for page in response.css("ul.pagination li a::attr(href)"):
