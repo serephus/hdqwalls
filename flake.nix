@@ -17,7 +17,8 @@
         python = pkgs.python3; # this is for uv
         # this is for local nix
         python' = python.withPackages (p: [
-          p.python-lsp-server
+          p.pillow
+          p.scrapy
         ]);
       in
       {
@@ -26,9 +27,10 @@
             # we need both python available to mix uv & nix
             python
             python'
+            pkgs.basedpyright
+            pkgs.black
             pkgs.ruff
             pkgs.uv
-            pkgs.basedpyright
           ];
         };
       }
