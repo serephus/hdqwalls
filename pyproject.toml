@@ -5,6 +5,6 @@ description = "A simple hdqwalls wallpaper crawler"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "pillow>=11.2.1",
+    "pillow>=12.2.0",
     "scrapy>=2.15.2",
 ]
