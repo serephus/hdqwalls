@@ -30,7 +30,7 @@ class Hdqwalls(Spider):
 
         image_urls = [
             # the origin url is just thumb url without the thumb part
-            url.replace("thumb/", "")
+            url.replace("bthumb/", "")
             for wallpaper in response.css(
                 "div.wallpapers_container div.wall-resp"
             )
