@@ -32,6 +32,10 @@
             pkgs.ruff
             pkgs.uv
           ];
+
+          # Force uv to use the Python interpreter provided by Nix
+          UV_PYTHON_DOWNLOADS = "never";
+          UV_PYTHON = nixpkgs.lib.getExe python;
         };
       }
     );
