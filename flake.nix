@@ -23,6 +23,7 @@
       in
       {
         devShell = pkgs.mkShell {
+          name = "hdqwalls";
           buildInputs = [
             # we need both python available to mix uv & nix
             python
